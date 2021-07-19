@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:videoplayer_app/constant/color/color.dart';
+import 'package:videoplayer_app/helper/constant/color/color.dart';
 
 ThemeData appTheme = ThemeData(
   primaryColor: primaryColor,

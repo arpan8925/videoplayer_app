@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:videoplayer_app/constant/color/color.dart';
-import 'package:videoplayer_app/constant/widget/text.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:photo_gallery/photo_gallery.dart';
+import 'package:videoplayer_app/helper/constant/color/color.dart';
+import 'package:videoplayer_app/helper/constant/widget/text.dart';
 
 Widget videolist(_media, myList, size) {
   return ListView.builder(

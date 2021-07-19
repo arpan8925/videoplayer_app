@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:photo_gallery/photo_gallery.dart';
-import 'package:videoplayer_app/constant/color/color.dart';
-import 'package:videoplayer_app/constant/widget/text.dart';
-import 'package:videoplayer_app/screen/video/utils/videolist.dart';
+import 'package:videoplayer_app/helper/constant/color/color.dart';
+import 'package:videoplayer_app/helper/constant/widget/text.dart';
+import 'package:videoplayer_app/screens/videos/utils/videolist.dart';
 
 class VideoScreen extends StatefulWidget {
   @override
@@ -34,29 +34,29 @@ class _VideoScreenState extends State<VideoScreen> {
 
   //all operation function
   Future<void> initAsync() async {
-    if (await _promptPermissionSetting()) {
-      List<Album> albums =
-          await PhotoGallery.listAlbums(mediumType: MediumType.video);
-      setState(() {
-        _albums = albums;
+    // if (await _promptPermissionSetting()) {
+    List<Album> albums =
+        await PhotoGallery.listAlbums(mediumType: MediumType.video);
+    setState(() {
+      _albums = albums;
 
-        for (var i = 0; i < _albums!.length; i++) {
-          if (_albums![i].name.toLowerCase() == 'all') {
-            setState(() {
-              newAlbmub = _albums![i];
-              _isvAvailable = true;
-              initvidolist(newAlbmub);
-            });
-          }
-        }
-
-        Timer(Duration(milliseconds: 500), () {
+      for (var i = 0; i < _albums!.length; i++) {
+        if (_albums![i].name.toLowerCase() == 'all') {
           setState(() {
-            _loading = false;
+            newAlbmub = _albums![i];
+            _isvAvailable = true;
+            initvidolist(newAlbmub);
           });
+        }
+      }
+
+      Timer(Duration(milliseconds: 500), () {
+        setState(() {
+          _loading = false;
         });
       });
-    }
+    });
+    // }
     Timer(Duration(milliseconds: 500), () {
       setState(() {
         _loading = false;
@@ -97,6 +97,7 @@ class _VideoScreenState extends State<VideoScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+        backgroundColor: secendaryColor,
         body: _loading
             ? Center(
                 child: CircularProgressIndicator(

@@ -1,23 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:videoplayer_app/constant/theme/theme.dart';
-import 'package:videoplayer_app/screen/splash/Splash_Screen.dart';
+import 'package:videoplayer_app/screens/wrapper.dart';
 
 void main() {
-  runApp(MyApp());
+  // calling wrapper screen. which specify other screens
+  runApp(WrapperScreen());
 
-  //always portrait mode
+  //  always portrait mood
   SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Video Player',
-      theme: appTheme,
-      home: SplashScreen(),
-    );
-  }
+    [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp],
+  );
 }
