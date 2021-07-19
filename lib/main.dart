@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:videoplayer_app/constant/theme/theme.dart';
 import 'package:videoplayer_app/screen/splash/Splash_Screen.dart';
 
 void main() {
   runApp(MyApp());
+
+  //always portrait mode
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        primarySwatch: Colors.blue,
-      ),
+      title: 'Video Player',
+      theme: appTheme,
       home: SplashScreen(),
     );
   }
 }
-
-

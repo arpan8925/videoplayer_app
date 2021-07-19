@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:videoplayer_app/constant/color/color.dart';
+import 'package:videoplayer_app/screen/video/video.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -18,15 +20,10 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-      ),
-      home: Scaffold(
-        backgroundColor: Colors.purple.shade900,
+    return Scaffold(
+        backgroundColor: primaryColor,
         appBar: AppBar(
-          backgroundColor: Colors.purple.shade900,
+          brightness: Brightness.dark,
           title: Text('Video'),
           elevation: 15.0,
           shape:
@@ -41,7 +38,7 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                 icon: Icon(Icons.search))
           ],
           bottom: TabBar(
-            indicatorColor: Colors.purple,
+            indicatorColor: highLightColor,
             labelColor: Colors.purpleAccent[400],
             unselectedLabelColor: Colors.white,
             controller: _tabController,
@@ -76,11 +73,12 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
         body: TabBarView(
           controller: _tabController,
           children: [
-            Center(
-                child: Text(
-              'All Videos',
-              style: TextStyle(color: Colors.white),
-            )),
+            VideoScreen(),
+            // Center(
+            //     child: Text(
+            //   'All Videos',
+            //   style: TextStyle(color: Colors.white),
+            // )),
             Center(
                 child: Text(
               'All Folders',
@@ -92,8 +90,6 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
               style: TextStyle(color: Colors.white),
             ))
           ],
-        ),
-      ),
-    );
+        ));
   }
 }
