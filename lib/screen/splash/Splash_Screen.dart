@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:videoplayer_app/HomePage.dart';
+import 'package:videoplayer_app/screen/home/HomePage.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

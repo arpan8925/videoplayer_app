@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -51,22 +47,28 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
             controller: _tabController,
             tabs: [
               Tab(
-                child: Text('Video',
-                style: TextStyle(
-                  fontSize: 16.0,
-                ),),
-              ),
-              Tab(
-                child: Text('Folder',
+                child: Text(
+                  'Video',
                   style: TextStyle(
                     fontSize: 16.0,
-                  ),),
+                  ),
+                ),
               ),
               Tab(
-                child: Text('History',
-                style: TextStyle(
-                  fontSize: 16.0,
-                ),),
+                child: Text(
+                  'Folder',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                  ),
+                ),
+              ),
+              Tab(
+                child: Text(
+                  'History',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                  ),
+                ),
               ),
             ],
           ),
@@ -74,18 +76,21 @@ class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
         body: TabBarView(
           controller: _tabController,
           children: [
-            Center(child: Text('All Videos Goes Here',
-            style: TextStyle(
-              color: Colors.white
-            ),)),
-            Center(child: Text('All Folders Goes Here',
-              style: TextStyle(
-                  color: Colors.white
-              ),)),
-            Center(child: Text('All History Goes Here',
-            style: TextStyle(
-              color: Colors.white
-            ),))
+            Center(
+                child: Text(
+              'All Videos',
+              style: TextStyle(color: Colors.white),
+            )),
+            Center(
+                child: Text(
+              'All Folders',
+              style: TextStyle(color: Colors.white),
+            )),
+            Center(
+                child: Text(
+              'All History',
+              style: TextStyle(color: Colors.white),
+            ))
           ],
         ),
       ),

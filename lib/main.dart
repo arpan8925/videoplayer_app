@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:videoplayer_app/Splash_Screen.dart';
+import 'package:videoplayer_app/screen/splash/Splash_Screen.dart';
 
 void main() {
   runApp(MyApp());
