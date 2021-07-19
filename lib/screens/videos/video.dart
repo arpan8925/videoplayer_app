@@ -22,7 +22,9 @@ class _VideoScreenState extends State<VideoScreen> {
   Album? newAlbmub;
   String? path;
   var myList = [];
+  var playList = [];
   bool _isvAvailable = false;
+  File? file;
 
   @override
   void initState() {
@@ -86,6 +88,7 @@ class _VideoScreenState extends State<VideoScreen> {
       for (var i = 0; i < _media!.length; i++) {
         _media?[i].getFile().then((value) {
           setState(() {
+            playList.add(value);
             myList.add(value.path);
           });
         });
@@ -105,7 +108,7 @@ class _VideoScreenState extends State<VideoScreen> {
                 ),
               )
             : _isvAvailable
-                ? videolist(_media, myList, size)
+                ? videolist(_media, myList, playList, size)
                 : Center(
                     child:
                         sText("No Videos", whitColor, 15.0, FontWeight.normal),
