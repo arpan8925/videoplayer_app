@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:videoplayer_app/helper/constant/color/app_color.dart';
 import 'package:videoplayer_app/helper/common_methods/common_methods.dart';
 import 'package:videoplayer_app/providers/albums_provider.dart';
-import 'package:videoplayer_app/screens/home/HomePage.dart';
+import 'package:videoplayer_app/screens/home/HomeScreen.dart';
 import 'package:videoplayer_app/screens/loading/loading_screen.dart';
 
 // Tariqul
@@ -26,7 +26,7 @@ class SplashScreen extends StatelessWidget {
               builder: (context, albumProvider, child) {
                 // making sure for storage permision
                 if (albumProvider.getStoragePermission == true) {
-                  return HomePage();
+                  return HomeScreen();
                 } else {
                   return LoadingScreen();
                 }

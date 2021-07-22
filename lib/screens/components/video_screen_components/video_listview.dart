@@ -19,7 +19,7 @@ class VideoListView extends StatelessWidget {
       ),
       separatorBuilder: (context, index) {
         return Divider(
-          color: AppColor.primaryColor,
+          color: AppColor.subTitleColor,
         );
       },
     );

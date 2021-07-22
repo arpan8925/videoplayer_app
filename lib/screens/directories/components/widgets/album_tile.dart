@@ -1,6 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_gallery/photo_gallery.dart';
 import 'package:videoplayer_app/helper/constant/color/app_color.dart';
+import 'package:videoplayer_app/helper/constant/widget/text_widget.dart';
 
 class AlbumTile extends StatelessWidget {
   final IconData icon;
@@ -20,18 +22,13 @@ class AlbumTile extends StatelessWidget {
         size: 45,
         color: AppColor.primaryIconColor,
       ),
-      title: Text(
-        this.album.name,
-        style: TextStyle(
-          fontSize: 16.4,
-          color: AppColor.primaryTextColor,
-        ),
+      title: SingleLineText(
+        title: album.name,
+        isTitle: true,
       ),
-      subtitle: Text(
-        this.album.count.toString() + " videos",
-        style: TextStyle(
-          color: AppColor.secondaryTextColor,
-        ),
+      subtitle: SingleLineText(
+        title: album.count.toString() + " videos",
+        isTitle: false,
       ),
     );
   }

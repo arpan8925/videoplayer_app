@@ -3,12 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
 import 'package:chewie/chewie.dart';
-import 'package:videoplayer_app/helper/constant/color/color.dart';
+import 'package:videoplayer_app/helper/constant/color/app_color.dart';
+
+class PlayVideo extends StatelessWidget {
+  final File videoPath;
+  const PlayVideo({required this.videoPath, Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    print("video path: " + videoPath.toString());
+    return VideoPlaySceen(
+        videoPlayController: VideoPlayerController.file(videoPath));
+  }
+}
 
 class VideoPlaySceen extends StatefulWidget {
   final VideoPlayerController videoPlayController;
   final bool? loop;
-  const VideoPlaySceen({Key? key, required this.videoPlayController, this.loop})
+  const VideoPlaySceen({required this.videoPlayController, this.loop, Key? key})
       : super(key: key);
 
   @override
@@ -52,21 +64,10 @@ class _VideoPlaySceenState extends State<VideoPlaySceen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: primaryColor,
+      backgroundColor: AppColor.primaryAppColor,
       body: Chewie(
         controller: chewieController!,
       ),
     );
-  }
-}
-
-class PlayVideo extends StatelessWidget {
-  final File videoPath;
-  const PlayVideo({Key? key, required this.videoPath}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return VideoPlaySceen(
-        videoPlayController: VideoPlayerController.file(videoPath));
   }
 }
