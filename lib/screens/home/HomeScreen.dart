@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:videoplayer_app/helper/common_methods/common_methods.dart';
 import 'package:videoplayer_app/helper/constant/color/app_color.dart';
 import 'package:videoplayer_app/providers/albums_provider.dart';
+import 'package:videoplayer_app/screens/components/app_drawer/app_drawer.dart';
 import 'package:videoplayer_app/screens/videos/components/video_listview.dart';
 import 'package:videoplayer_app/screens/directories/directories_screen.dart';
 import 'package:videoplayer_app/screens/home/components/tab_bar_text.dart';
@@ -75,31 +76,8 @@ class HomeScreen extends StatelessWidget {
           },
         ),
 
-        // body: TabBarView(
-        //   children: [
-        //     // all video tab
-        //     Consumer<AlbumsProvider>(
-        //       builder: (context, albumProvider, child) {
-        //         albumProvider.initAlbums();
-        //         return VideoListView(videos: albumProvider.getAllVideo);
-        //       },
-        //     ),
 
-        //     // directory tab
-        //     DirectoriesScreen(),
-        //     // history tab
-        //     Center(
-        //       child: Text(
-        //         "History",
-        //         style: TextStyle(
-        //           color: AppColor.primaryTextColor,
-        //         ),
-        //       ),
-        //     ),
-        //   ],
-        // ),
-
-        drawer: Drawer(),
+        drawer: AppDrawer(),
       ),
     );
   }
