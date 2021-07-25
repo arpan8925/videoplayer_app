@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 class DefaultSize {
+
   static double getWidth(BuildContext context) {
     return MediaQuery.of(context).size.width;
   }

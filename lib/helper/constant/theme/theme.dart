@@ -8,6 +8,8 @@ ThemeData appTheme = ThemeData(
   splashColor: AppColor.subTitleColor,
   scaffoldBackgroundColor: AppColor.secondaryAppColor,
   appBarTheme: appBarTheme,
+  popupMenuTheme: popupMenuThemeData,
+  dialogTheme: dialogTheme,
   brightness: Brightness.light,
 );
 
@@ -15,4 +17,12 @@ AppBarTheme appBarTheme = AppBarTheme(
   titleTextStyle: TextStyle(
     color: Colors.green,
   ),
+);
+
+PopupMenuThemeData popupMenuThemeData = PopupMenuThemeData(
+  color: AppColor.primaryAppColor,
+);
+
+DialogTheme dialogTheme = DialogTheme(
+  backgroundColor: AppColor.primaryAppColor,
 );

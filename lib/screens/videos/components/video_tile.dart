@@ -5,7 +5,7 @@ import 'package:photo_gallery/photo_gallery.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:videoplayer_app/helper/constant/color/app_color.dart';
 import 'package:videoplayer_app/helper/constant/widget/text_widget.dart';
-import 'package:videoplayer_app/screens/videos/components/videoPlay.dart';
+import 'package:videoplayer_app/screens/components/popup_menu/main_pop_up_menu.dart';
 
 class VideoTile extends StatelessWidget {
   final Medium? video;
@@ -81,13 +81,14 @@ class VideoTile extends StatelessWidget {
         title: video!.width.toString() + "x" + video!.height.toString(),
         isTitle: false,
       ),
-      trailing: IconButton(
-        onPressed: () {},
-        icon: Icon(
-          Icons.more_vert,
-          color: AppColor.primaryIconColor,
-        ),
-      ),
+      // trailing: IconButton(
+      //   onPressed: () {},
+      //   icon: Icon(
+      //     Icons.more_vert,
+      //     color: AppColor.primaryIconColor,
+      //   ),
+      // ),
+      trailing: MainPopUpMenu(video: video),
     );
   }
 }

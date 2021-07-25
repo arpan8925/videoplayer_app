@@ -20,9 +20,7 @@ class SplashScreen extends StatelessWidget {
       builder: (context, isOk) {
         if (isOk.data == true) {
           // initializing Albums provider
-          return ChangeNotifierProvider(
-            create: (context) => AlbumsProvider(),
-            child: Consumer<AlbumsProvider>(
+          return Consumer<AlbumsProvider>(
               builder: (context, albumProvider, child) {
                 // making sure for storage permision
                 if (albumProvider.getStoragePermission == true) {
@@ -31,8 +29,7 @@ class SplashScreen extends StatelessWidget {
                   return LoadingScreen();
                 }
               },
-            ),
-          );
+            );
         } else {
           // arnob
           return Scaffold(

@@ -17,6 +17,7 @@ class AlbumsProvider with ChangeNotifier {
 
   void getPermission() async {
     _isPermit = await PermissionSettings.promptPermissionSetting();
+    print("Permit: $_isPermit");
     initAlbums();
   }
 
@@ -28,6 +29,7 @@ class AlbumsProvider with ChangeNotifier {
       _mediaPage = await _albums.first.listMedia();
       // getting all videos
       _allVideo = _mediaPage!.items;
+      print("find albums");
       notifyListeners();
     }
   }

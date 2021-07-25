@@ -13,14 +13,16 @@ class AppColor {
   static Color? unselectLabelColor = Colors.white;
   static Color? selectedLabelColor = Colors.purpleAccent[400];
 
-
   // text color
   static Color? primaryTextColor = Colors.white;
   static Color? subTitleColor = Color(0xff8581ba);
   static Color? blackColor = Colors.black;
   static Color? opacityBlackColor = Colors.black.withOpacity(0.5);
+  static Color? buttonTextColor = Colors.purpleAccent[400];
+
   // icon color
   static Color? primaryIconColor = Colors.white;
+  static Color? secondaryIconColor = Colors.white60;
 
   // thumbnail default color
   static Color? thumbnailDefaultColor = Colors.grey[300];

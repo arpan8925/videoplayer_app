@@ -7,10 +7,12 @@ class SingleLineText extends StatelessWidget {
   final String? title;
   final bool isTitle;
   final bool isThumbnail;
+  final double fontSize;
   const SingleLineText(
       {required this.title,
       this.isTitle = true,
       this.isThumbnail = false,
+      this.fontSize = 17,
       Key? key})
       : super(key: key);
 
@@ -29,7 +31,7 @@ class SingleLineText extends StatelessWidget {
         fontSize: isThumbnail
             ? 10.0
             : isTitle
-                ? 17.0
+                ? fontSize
                 : 12.0,
         fontWeight: isThumbnail
             ? FontWeight.normal
@@ -41,16 +43,6 @@ class SingleLineText extends StatelessWidget {
   }
 }
 
-// Widget sText(String title, Color? color, double size, FontWeight fontWeight) {
-//   return Text(title,
-//       maxLines: 1,
-//       overflow: TextOverflow.ellipsis,
-//       style: TextStyle(
-//         color: color,
-//         fontSize: size,
-//         fontWeight: fontWeight,
-//       ));
-// }
 
 //limit line text
 class LimitLineText extends StatelessWidget {
@@ -83,30 +75,13 @@ class LimitLineText extends StatelessWidget {
   }
 }
 
-// Widget lText(
-//     String title, Color color, double size, FontWeight fontWeight, int line) {
-//   return Text(title,
-//       maxLines: line,
-//       overflow: TextOverflow.ellipsis,
-//       style: TextStyle(
-//         color: color,
-//         fontSize: size,
-//         fontWeight: fontWeight,
-//       ));
-// }
 
 //multiline line text
 
 class MultiLineText extends StatelessWidget {
   final String? title;
-  final Color? color;
-  final double? size;
-  final FontWeight? fontWeight;
   const MultiLineText(
       {required this.title,
-      required this.color,
-      required this.size,
-      required this.fontWeight,
       Key? key})
       : super(key: key);
 
@@ -115,19 +90,31 @@ class MultiLineText extends StatelessWidget {
     return Text(
       title.toString(),
       style: TextStyle(
-        color: color,
-        fontSize: size,
-        fontWeight: fontWeight,
+        color: AppColor.primaryTextColor,
+        fontSize: 14,
+        fontWeight: FontWeight.normal,
       ),
     );
   }
 }
 
-// Widget mText(String title, Color color, double size, FontWeight fontWeight) {
-//   return Text(title,
-//       style: TextStyle(
-//         color: color,
-//         fontSize: size,
-//         fontWeight: fontWeight,
-//       ));
-// }
+
+// button text
+
+class ButtonText extends StatelessWidget {
+  final String buttonName;
+  const ButtonText({required this.buttonName, Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      buttonName,
+      style: TextStyle(
+        color: AppColor.buttonTextColor,
+        fontSize: 15,
+        fontWeight: FontWeight.normal,
+      ),
+    );
+  }
+}
+

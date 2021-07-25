@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:photo_gallery/photo_gallery.dart';
 import 'package:videoplayer_app/helper/constant/color/app_color.dart';
-import 'package:videoplayer_app/screens/components/video_screen_components/video_tile.dart';
+import 'package:videoplayer_app/screens/videos/components/video_tile.dart';
 
 class VideoListView extends StatelessWidget {
   final List<Medium>? videos;

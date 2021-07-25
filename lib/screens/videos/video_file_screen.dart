@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:photo_gallery/photo_gallery.dart';
 import 'package:videoplayer_app/screens/components/app_bar.dart';
-import 'package:videoplayer_app/screens/components/video_screen_components/video_listview.dart';
+import 'package:videoplayer_app/screens/videos/components/video_listview.dart';
 import 'package:videoplayer_app/screens/loading/loading_screen.dart';
 
 class VideoFileScreen extends StatelessWidget {
@@ -11,8 +11,9 @@ class VideoFileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("video screen");
     return Scaffold(
-      appBar: AllAppBar.secondaryAppBar(context, "Videos"),
+      appBar: AllAppBar.secondaryAppBar(context, album.name),
       body: FutureBuilder<MediaPage>(
         // here extructs the containt into tapped folder
         // and pass that info to VideoListView
