@@ -1,6 +1,8 @@
 // this is final
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
+import 'package:videoplayer_app/config/ads_service.dart';
 import 'package:videoplayer_app/helper/constant/color/app_color.dart';
 import 'package:videoplayer_app/providers/albums_provider.dart';
 import 'package:videoplayer_app/screens/components/app_drawer/app_drawer.dart';
@@ -49,7 +51,6 @@ class HomeScreen extends StatelessWidget {
         ),
         body: Consumer<AlbumsProvider>(
           builder: (context, albumProvider, child) {
-
             return TabBarView(
               children: [
                 // all video tab
@@ -70,6 +71,16 @@ class HomeScreen extends StatelessWidget {
           },
         ),
         drawer: AppDrawer(),
+        bottomNavigationBar: Container(
+          height: 50,
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+            color: AppColor.primaryTextColor,
+          ),
+          // padding: EdgeInsets.all(8.0),
+          child: AdWidget(
+              key: UniqueKey(), ad: AdManager.createBannerAd()..load()),
+        ),
       ),
     );
   }

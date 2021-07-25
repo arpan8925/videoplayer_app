@@ -24,19 +24,37 @@ class VideoTile extends StatelessWidget {
       tileColor: AppColor.secondaryAppColor,
       leading: Container(
         width: 100.0,
+        height: 60.0,
+        decoration: BoxDecoration(
+          color: AppColor.blackColor,
+        ),
         child: Stack(
           children: [
             Container(
               width: 100.0,
+              height: 60.0,
               color: AppColor.thumbnailDefaultColor,
-              child: FadeInImage(
-                fit: BoxFit.cover,
-                placeholder: MemoryImage(kTransparentImage),
-                image: ThumbnailProvider(
-                  mediumId: video!.id,
-                  mediumType: video!.mediumType,
-                  highQuality: true,
-                ),
+              child: FutureBuilder(
+                future: video!.getThumbnail(),
+                builder: (context, intList) {
+                  if (intList.hasData) {
+                    return FadeInImage(
+                      fit: BoxFit.cover,
+                      placeholder: MemoryImage(kTransparentImage),
+                      image: ThumbnailProvider(
+                        mediumId: video!.id,
+                        mediumType: video!.mediumType,
+                        highQuality: true,
+                      ),
+                    );
+                  } else {
+                    return Container(
+                      width: 100.0,
+                      height: 60.0,
+                      color: AppColor.thumbnailDefaultColor,
+                    );
+                  }
+                },
               ),
             ),
             Align(
