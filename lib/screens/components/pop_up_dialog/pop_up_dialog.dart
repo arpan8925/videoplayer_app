@@ -134,7 +134,7 @@ class PopUpDialog {
                 CommonMethods.deleteFileDialog(file);
               }
 
-              Navigator.pushNamed(context, '/home');
+              Navigator.pop(context);
             },
             child: ButtonText(buttonName: "OK"),
           ),
