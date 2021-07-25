@@ -7,7 +7,6 @@ class DrawerDialog {
       context: context,
       builder: (context) => AlertDialog(
         title: SingleLineText(title: "About"),
-        // contentPadding: EdgeInsets.only(left: 10),
         content: SingleLineText(
           title: "Version: 0.0.1",
           fontSize: 14,

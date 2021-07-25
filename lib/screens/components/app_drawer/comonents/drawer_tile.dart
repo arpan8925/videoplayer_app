@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:videoplayer_app/helper/constant/color/app_color.dart';
 import 'package:videoplayer_app/helper/constant/widget/text_widget.dart';
-import 'package:videoplayer_app/screens/components/app_drawer/components/about_dialog.dart';
+import 'package:videoplayer_app/screens/components/app_drawer/comonents/about_dialog.dart';
 
 class DrawerTile extends StatelessWidget {
   final IconData icon;
@@ -15,9 +15,11 @@ class DrawerTile extends StatelessWidget {
       contentPadding: EdgeInsets.symmetric(horizontal: 15),
       onTap: () {
         switch (title) {
+          // navigating to home page
           case "Video":
             Navigator.pushReplacementNamed(context, '/home');
             break;
+            // showing about this app
           case "About":
             DrawerDialog.aboutDialog(context);
             break;

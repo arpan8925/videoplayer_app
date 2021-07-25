@@ -81,13 +81,6 @@ class VideoTile extends StatelessWidget {
         title: video!.width.toString() + "x" + video!.height.toString(),
         isTitle: false,
       ),
-      // trailing: IconButton(
-      //   onPressed: () {},
-      //   icon: Icon(
-      //     Icons.more_vert,
-      //     color: AppColor.primaryIconColor,
-      //   ),
-      // ),
       trailing: MainPopUpMenu(video: video),
     );
   }

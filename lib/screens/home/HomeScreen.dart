@@ -1,7 +1,6 @@
 // this is final
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:videoplayer_app/helper/common_methods/common_methods.dart';
 import 'package:videoplayer_app/helper/constant/color/app_color.dart';
 import 'package:videoplayer_app/providers/albums_provider.dart';
 import 'package:videoplayer_app/screens/components/app_drawer/app_drawer.dart';
@@ -50,11 +49,6 @@ class HomeScreen extends StatelessWidget {
         ),
         body: Consumer<AlbumsProvider>(
           builder: (context, albumProvider, child) {
-            if (CommonMethods.isUpdate == true) {
-              albumProvider.initAlbums();
-              print("Rename successfull");
-              CommonMethods.isUpdate = false;
-            }
 
             return TabBarView(
               children: [
@@ -75,8 +69,6 @@ class HomeScreen extends StatelessWidget {
             );
           },
         ),
-
-
         drawer: AppDrawer(),
       ),
     );

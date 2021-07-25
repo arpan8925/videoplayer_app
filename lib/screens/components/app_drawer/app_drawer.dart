@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:videoplayer_app/helper/constant/color/app_color.dart';
 import 'package:videoplayer_app/helper/constant/default_size.dart';
 import 'package:videoplayer_app/helper/constant/widget/text_widget.dart';
-import 'package:videoplayer_app/screens/components/app_drawer/components/drawer_tile.dart';
+import 'package:videoplayer_app/screens/components/app_drawer/comonents/drawer_tile.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
@@ -21,6 +21,7 @@ class AppDrawer extends StatelessWidget {
             Material(
               color: AppColor.primaryAppColor,
               elevation: 10.0,
+              // header section
               child: DrawerHeader(
                 child: Column(
                   children: [
@@ -37,6 +38,7 @@ class AppDrawer extends StatelessWidget {
                 ),
               ),
             ),
+            // list of buttons 
             Expanded(
               child: Material(
                 color: AppColor.secondaryAppColor,

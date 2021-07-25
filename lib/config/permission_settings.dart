@@ -5,16 +5,6 @@ class PermissionSettings {
   // request storage permission
   static bool? isPermit;
   static Future<bool> promptPermissionSetting() async {
-    // if (Platform.isIOS &&
-    //         await Permission.storage.request().isGranted &&
-    //         await Permission.photos.request().isGranted ||
-    //     Platform.isAndroid && await Permission.storage.request().isGranted) {
-    //   isPermit = true;
-    //   return true;
-    // } else {
-    //   isPermit = false;
-    //   return false;
-    // }
 
     if (await Permission.storage.request().isGranted) {
       isPermit = true;
@@ -25,6 +15,7 @@ class PermissionSettings {
     }
   }
 
+  // permission for manage storage
   static Future<bool> getManagePermission() async {
     if (await Permission.manageExternalStorage.request().isGranted) {
       return true;

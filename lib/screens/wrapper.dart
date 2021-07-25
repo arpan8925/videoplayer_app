@@ -11,16 +11,6 @@ class WrapperScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return MaterialApp(
-    //   debugShowCheckedModeBanner: false,
-    //   title: 'Video Player',
-    //   theme: appTheme,
-    //   // this is initial page of app. which is splash screen
-    //   initialRoute: '/',
-    //   // this is for named route
-    //   onGenerateRoute: RouteGenerator.routeGenerator,
-    // );
-
     return ChangeNotifierProvider(
       create: (context) => AlbumsProvider(),
       child: MaterialApp(
