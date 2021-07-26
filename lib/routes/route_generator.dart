@@ -37,8 +37,7 @@ class RouteGenerator {
       // play video screen
       case '/play':
         if (args is File) {
-          return MaterialPageRoute(
-              builder: (_) => PlayVideo(path: args));
+          return MaterialPageRoute(builder: (_) => PlayVideo(videoPath: args));
         } else {
           // this is for error screen
           return MaterialPageRoute(builder: (_) => ErrorScreen());
